@@ -1,0 +1,598 @@
+body{
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+}
+.header{
+    width: 100%;
+    background-color:white;
+    height: 100px;
+    border: 2px solid whitesmoke;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    
+}
+.headerLogo{
+   width: 25%;
+    float: left;
+    left: 0;
+    padding-left: 20px;
+}
+.justifyIcon{
+    font-size: 24px;
+    padding: 10px;
+    color: blue;
+    width: 3%;
+    cursor: pointer;
+    position: relative;
+}
+.headerSearch{
+    width: 30%;
+    border: 1px solid whitesmoke;
+    height: 50px;
+    background-color: rgb(253, 249, 249);
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+.searchIcon{
+    font-size: 24px;
+    border-radius: 50%;
+    padding-left: 10px;
+}
+.inputBox input{
+    width: 430px;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    padding-left: 20px;
+}
+.headerLog{
+    width:40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logout{
+    width: 40%;
+    height: 60px;
+    border-radius: 30px;
+    background-color: gray;
+    text-align: center;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+.logoutUser{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: black;
+    border: 1px solid white;
+
+}
+.logout:hover{
+    background-color: blue;
+    color: white;
+}
+.logoutText{
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.logoutText a{
+    text-decoration: none;
+    color: white;
+}
+
+.logoutText li {
+    list-style: none;
+}
+.logoutText ul ul li a{
+    text-decoration: none;
+    color: red;
+}
+
+.logoutText ul li ul{
+    display: none;
+}
+.logoutText ul li:hover ul{
+    display: block;
+    position: fixed;
+    z-index: 1;
+}
+
+.sidenav {
+   width:17%;
+    background-color:white;
+    border: 2px solid whitesmoke;
+    padding-top:20px;
+    padding: 20px;
+    left: 0;
+    margin-top:-800px;
+    
+}
+.hodler{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    position: relative;
+}
+.sidenav a, .dropdown-btn {
+    padding: 16px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+.sidenav a:hover, .dropdown-btn:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.active{
+    background-color: blue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.active:hover{color: white;}
+
+.dropdown-container {
+    display: none;
+    background-color: white;
+    padding-left: 8px;
+    border: 2px solid whitesmoke;
+}
+
+
+.chevron-down{
+    float: right;
+    padding-right: 8px;
+}
+@media screen and (max-width: 450px){
+    .sidenav {padding-top:15px;}
+    .sednav a{font-size: 18px;}
+}
+.holder{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+.main{
+    width: 80%;
+    margin: auto;
+    font-size: 20px; /* increased to enable scrolling */
+    padding: 0px 10px;
+    background-color: rgb(241, 237, 237);
+    padding: 10px;
+}
+.mainDashboard{
+    width: 98%;
+    font-size: 16px;
+    padding: 10px;
+}
+.rate{
+    width: 100%;
+   
+}
+/* Box 1 */
+.rateBox1Holder{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+}
+.rateBox1a{
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 160px;
+  padding: 5px;
+  border-radius: 10px; 
+  background-color: white;
+}
+.rateBox1b{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    padding: 5px;
+    margin-left: 20px; 
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+.rateBox1-Text{
+    width: 100%;
+    padding: 5px; 
+ }
+ .rateBox1-Text span{
+     color: red;
+ }
+ .rateBox1-Icon{
+     width: 24%;
+     padding: 5px;
+     font-size: 44px;
+     color: blue; 
+ }
+
+
+ /*Box 2a */
+ .rateBox2Holder{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.rateBox2a{
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  width: 49%;
+  height: 160px;
+  padding: 5px;
+  border-radius: 10px; 
+  background-color: white;
+}
+  
+.rateBox2a-Circle{
+    width: 40%;
+    padding: 5px; 
+ }
+ .rateBox2a-Text{
+     width: 100%;
+     padding: 5px;
+     font-size: 24px;
+     
+ }
+
+ .circle2aHolder{
+    width:135px;
+    height: 130px;
+    position: relative; /*To enable the svg cirlce in*/
+}
+.outerA{
+    height: 133px;
+    width: 133px;
+    border-radius: 50%;
+    padding: 20px;
+    background-color: rgb(240, 240, 221);    
+}
+.innerA{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+#numberA{
+    font-weight: 600px;
+    color:#555;
+}
+.circle2aHolder circle{
+    fill:none;
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset:472;
+    animation: anim 2s linear forwards;
+}
+.circle2aHolder svg{
+    position: absolute;
+    top:0;
+    left:0;
+}
+@keyframes anim{
+    100%{
+        stroke-dashoffset: 400;
+    }
+}
+
+/*2b*/
+/*Box 2b */
+
+.rateBox2b{
+  display: flex; 
+  justify-content: flex-start;
+  align-items: center;
+  width: 49%;
+  height: 160px;
+  padding: 5px;
+  border-radius: 10px; 
+  background-color: white;
+}
+  
+.rateBox2b-Circle{
+    width: 40%;
+    padding: 5px; 
+ }
+ .rateBox2b-Text{
+     width: 100%;
+     padding: 5px;
+     font-size: 24px;
+     
+ }
+
+ .circle2bHolder{
+    width:135px;
+    height: 130px;
+    position: relative; /*To enable the svg cirlce in*/
+}
+.outerB{
+    height: 133px;
+    width: 133px;
+    border-radius: 50%;
+    padding: 20px;
+    background-color: rgb(240, 240, 221);
+    
+}
+.innerB{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+#numberB{
+    font-weight: 600px;
+    color:#555;
+}
+.rateBox2b-Circle circle{
+    fill:none;
+    stroke: url(#GradientColor);
+    stroke-width: 20px;
+    stroke: red;
+    stroke-dasharray: 472;
+    stroke-dashoffset:472;
+    animation: anim-b 2s linear forwards;
+}
+ .rateBox2b-Circle svg{
+    position: absolute;
+    top:0;
+    left:0;
+}
+@keyframes anim-b{
+    100%{
+        stroke-dashoffset: 600;
+    }
+}
+
+/*Blog*/
+.blogGraph{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    font-size: 18px;
+    background-color: rgb(241, 237, 237);
+}
+.blog{
+    width: 49%;
+    display: inline-block;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.blogText{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(230, 215, 215);
+}
+.blogImg{
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+}
+.blogImg img{
+    border-radius: 10px;
+}
+.graph{
+    width: 49%;
+    display: inline-block;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.graphText{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(230, 215, 215);
+}
+.graphGraph{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
+}
+.footer{
+    height: 98%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 18px;
+}
+/*sideNav2 hidden with z-index */
+.sidenavHidden{
+    display: none;
+    top:100px;
+    left: 0;
+    background-color:white;
+    border: 2px solid whitesmoke;
+    padding-top:20px;
+    padding: 20px;
+    position: absolute;
+}
+
+.sidenavHidden a, .dropdown-btn2 {
+    padding: 16px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+.sidenavHidden a:hover, .dropdown-btn2:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+.active2{
+    background-color: blue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.active2:hover{color: white;}
+
+.dropdown-container2 {
+    display: none;
+    background-color: white;
+    padding-left: 8px;
+    border: 2px solid whitesmoke;
+}
+
+@media screen and (max-width: 450px){
+    .sidenav2 {padding-top:15px;}
+}
+.reverse{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+    color:blue;
+    cursor: pointer;
+   display: none;
+}
+
+@media(max-width:1000px){
+    
+    .headerSearch{
+        width: 150px;
+        margin-left: 30px;
+    }
+
+    .inputBox input{
+        width: 150px;
+        padding: 10px;
+    }
+    .logoutUser{
+        height: 50px;
+       
+    
+    }
+    .logoutText{
+        font-size: 12px;
+        margin-left: -30px;
+    }
+
+    .logout{
+        width: 100px;
+ 
+    }
+    .headerLog{
+    margin-left: 30px;
+    width: 40%;
+    height: 50px;
+    }
+
+.main, .holder, .blog, .graph, 
+.graphGraph, .rateBox2Holder, 
+.rateBox1Holder, .blogGraph, 
+.rateBox2b, .rateBox2a, 
+.graphText, .blogGraph {
+    display: block;
+    width: 100%;
+}
+
+    .header{
+        width: 90%;
+        margin: auto;
+        z-index: 1;
+        position: relative;
+        font-size: 8px;
+        margin-bottom: 20px;
+    }
+    .justifyIcon{
+        margin-left: -15px;
+    }
+    .searchIcon{
+        margin-left: -15px;
+    }
+    .main{
+        margin-top: 50px;
+    }
+    .blogText{
+        height: 70px;
+    }
+    .blogImg{
+        height: auto;
+    }
+    .graphGraph{
+        height: 300px;
+    }
+
+    .sidenav, .headerLogo{
+        display: none;
+    }
+        .rateBox1b{
+            margin-left:-4px;
+    }
+   
+    .rateBox1a, .rateBox1b,
+    .rateBox2a, .rateBox2b{
+        margin-top:20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            
+    }
+    .footer{
+        font-size: 13px;
+        padding-bottom: 20px;
+        margin-top: 10px;
+    }
+    
+}
+#chart{
+    width: 95% !important;
+}

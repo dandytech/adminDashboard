@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dash Board</title>
+    <!--Apex chart CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/asset/css/bootstrap.css">
+    <link rel="stylesheet" href="/asset/css/bootstrap.min.css">
+    
+    </head>
+<body>
+    <div class="header">
+        <div class="headerLogo">
+            <img src="images/logo.png" width="90%" alt="Logo">
+        </div>
+
+        <div class="justifyIcon">
+            <span id="closeIcon"  onclick="myCloser()">
+                <i  class="glyphicon glyphicon-align-right" ></i>
+            </span>
+
+            <span class="reverse" onclick="myReverse()" id="reverseIcon" >
+                <i class="glyphicon glyphicon-arrow-right"></i>
+            </span>
+        </div>
+
+        <div class="headerSearch">
+            <div class="searchIcon">
+                <span class="glyphicon glyphicon-search"></span>
+            </div>
+            <div class="inputBox"><input type="serach" placeholder="Search here"></div>
+        </div>
+        <div class="headerLog">
+            <div class="logout">
+                <div class="logoutUser">
+                    <img src="images/AdminDan.png" width="60%" alt="Admin">
+                </div>
+                <div class="logoutText">
+                    <ul>
+                        <li>
+                            Admin Daniel <span class="glyphicon glyphicon-chevron-down"></span>
+                            <ul>
+                                <li>
+                                    <a href="#">log out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Holder-->
+<div class="holder">
+    
+
+<!--SideNav-->
+<div class="sidenav" id="sidenavBar">
+    <h1><a href="#about"> <span class="glyphicon glyphicon-th-large"></span>  Dashboard</a></h1>
+
+     <button class="dropdown-btn">
+         <span class="glyphicon glyphicon-user"></span> Members <i class=" chevron-down glyphicon glyphicon-chevron-down"></i>
+     </button>
+     <div class="dropdown-container">
+         <a href="#">Add Members</a>
+         <a href="#">View All members</a>
+         <a href="#">disable/Suspend members</a>
+     </div>
+
+     <button class="dropdown-btn">
+         <span class="glyphicon glyphicon-envelope"></span> Messages <i class=" chevron-down glyphicon glyphicon-chevron-down"></i>
+     </button>
+     <div class="dropdown-container">
+         <a href="#">Create a messgae/notification</a>
+         <a href="#">Viaw replies from members</a>
+     </div>
+     
+     <button class="dropdown-btn">
+         <span class="glyphicon glyphicon-print"></span> Payment <i class=" chevron-down glyphicon glyphicon-chevron-down"></i>
+     </button>
+     <div class="dropdown-container">
+         <a href="#">View all payments from members</a>
+         <a href="#">Log out</a>
+     </div>
+     
+     <button class="dropdown-btn">
+         <span class="glyphicon glyphicon-download"></span> Blog <i class=" chevron-down glyphicon glyphicon-chevron-down"></i>
+     </button>
+     <div class="dropdown-container">
+         <a href="#">Upload Blog</a>
+     </div>
+
+     <button class="dropdown-btn">
+         <span class="glyphicon glyphicon-cog"></span> Setting <i class=" chevron-down glyphicon glyphicon-chevron-down"></i>
+     </button>
+     <div class="dropdown-container">
+         <a href="#">Edit Profile</a>
+         <a href="#">Log out</a>
+     </div>
+ </div>
+
+
+ <!--Script for the Dropdown-->
+ <script>
+     var dropdown =
+     document.getElementsByClassName("dropdown-btn");
+     var i;
+     for(i = 0; i < dropdown.length; i++) {
+         dropdown[i].addEventListener("click", function() {
+             this.classList.toggle("active");
+             var dropdownContent = 
+             this.nextElementSibling;
+             if(dropdownContent.style.display === "block") {
+                 dropdownContent.style.display = "none";
+             }else{
+                 dropdownContent.style.display = "block";
+             }
+         });
+     }
+ </script>
+<!--SideNav End-->
+
+<!--main-->
+<div class="main" id="myMain">
+    <div class="mainDashboard">
+        <h2>Dashboard</h2>
+        <p>Welcome back admin</p>
+    </div>
+
+    <div class="rate">
+        <div class="rateBox1Holder">
+            <div class="rateBox1a">
+                <div class="rateBox1-Text">
+                    <h2>10+</h2>
+                    <b>Total Members</b>
+                    <p>+0.5 than last month</p>
+                </div>
+                <div class="rateBox1-Icon">
+                    <span class="glyphicon glyphicon-user"></span>
+                </div>
+            </div>
+            <div class="rateBox1b">
+                <div class="rateBox1-Text">
+                    <h2>3+</h2>
+                    <b>Total Messages</b>
+                    <p><span>-2%</span> than last month</p>
+                </div>
+                <div class="rateBox1-Icon">
+                    <span class="glyphicon glyphicon-education"></span>
+                </div>
+            </div>    
+        </div> 
+    
+        <div class="rateBox2Holder">
+
+            <div class="rateBox2a">
+                <div class="rateBox2a-Circle">
+                    
+                    <!--Round % Progress Bar 1-->
+                    <div class="circle2aHolder">
+                        <div class="outerA">
+                            <div class="innerA">
+                                <div id="numberA">
+
+                                </div>
+                            </div>
+                        </div>
+                        <svg width="160px" height="160px">
+                            <circle cx="65" cy="65" r="57" stroke="blue" stroke-linecap = "round"/>
+                        </svg>
+                    </div>
+                    <!--Script 1-->
+                <script>
+                    let number = document.getElementById("numberA");
+                    let counter = 0;
+                    setInterval(() => {
+                        if(counter == 10){
+                            clearInterval();
+                        }else{
+                            counter += 1;
+                            number.innerHTML = counter + "%";
+                        }
+                    }, 200);
+                </script>
+                        
+            </div>
+
+            <div class="rateBox2a-Text">
+                <h2>8</h2>
+                <h2>Payment History</h2>
+            </div>
+        </div>
+
+        <!--2b-->
+        <div class="rateBox2b">
+            <div class="rateBox2b-Circle">
+                
+                <!--Round % Progress Bar 2-->
+                <div class="circle2bHolder">
+                    <div class="outerB">
+                        <div class="innerB">
+                            <div id="numberB">
+
+                            </div>
+                        </div>
+                    </div>
+                    <svg width="160px" height="160px">
+                        <circle cx="65" cy="65" r="57" stroke="red" stroke-linecap = "round"/>
+                    </svg>
+                </div>
+                <!--Script 2-->
+                <script>
+                    let numberb = document.getElementById("numberB");
+                    let count = 0;
+                    setInterval(() => {
+                        if(count == 2){
+                            clearInterval();
+                        }else{
+                            count += 1;
+                            numberB.innerHTML = count + "%";
+                        }
+                    }, 1000);
+                </script>
+                        
+                </div>
+
+                <div class="rateBox2b-Text">
+                    <h2>2</h2>
+                    <h2>Total Notifications</h2>
+                </div>
+            </div>
+
+        </div>      
+    </div>
+
+        <!--Blog and Graph-->
+        <div class="blogGraph">
+            <div class="blog">
+                <div class="blogText"><h2>Recent blog</h2></div>
+                <div class="blogImg">
+                    <p>
+                        <img src="images/9.jpg" width="100%" height="100%" alt="blogImg1">
+                    </p>                    
+                    <h2>Unique blog</h2>
+                </div>
+                <div class="blogImg">
+                    <p>
+                        <img src="images/9.jpg" width="100%" height="100%" alt="blogImg1">
+                    </p>
+                    <h2>Unique blog</h2>
+                </div>
+            </div>
+            <div class="graph">
+                <div class="graphText"><h2>User performance</h2></div>
+                <div class="graphGraph">
+
+                    <div id="chart"></div>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+<!--Main div end-->
+
+</div>
+
+<!--Side Nav 2 hidden-->
+
+<div class="sidenavHidden" id="sidenav2">
+    <button class="dropdown-btn2">
+        <span class="glyphicon glyphicon-th-large"></span>
+    </button>
+     <button class="dropdown-btn2">
+         <span class="glyphicon glyphicon-user"></span>
+     </button>
+     <div class="dropdown-container2">
+         <a href="#">Add Members</a>
+         <a href="#">View All members</a>
+         <a href="#">disable/Suspend members</a>
+     </div>
+
+     <button class="dropdown-btn2">
+         <span class="glyphicon glyphicon-envelope"></span>
+     </button>
+     <div class="dropdown-container2">
+         <a href="#">Create a messgae/notification</a>
+         <a href="#">Viaw replies from members</a>
+     </div>
+     
+     <button class="dropdown-btn2">
+         <span class="glyphicon glyphicon-print"></span>
+     </button>
+     <div class="dropdown-container2">
+         <a href="#">View all payments from members</a>
+         <a href="#">Log out</a>
+     </div>
+     
+     <button class="dropdown-btn2">
+         <span class="glyphicon glyphicon-download"></span>
+     </button>
+     <div class="dropdown-container2">
+         <a href="#">Upload Blog</a>
+     </div>
+
+     <button class="dropdown-btn2">
+         <span class="glyphicon glyphicon-cog"></span>
+     </button>
+     <div class="dropdown-container2">
+         <a href="#">Edit Profile</a>
+         <a href="#">Log out</a>
+     </div>
+ </div>
+   <!--Script for the Dropdown SideNav Hidden-->
+   <script>
+    var dropdown =
+    document.getElementsByClassName("dropdown-btn2");
+    var j;
+    for(j = 0; j < dropdown.length; j++) {
+        dropdown[j].addEventListener("click", function() {
+            this.classList.toggle("active2");
+            var dropdownContent = this.nextElementSibling;
+            if(dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            }else{
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+</script>
+
+<!--Script for hidding the main Side bar to widden the main Div-->
+    <script>
+        function myCloser(){
+            let close = document.getElementById("sidenavBar");
+            let open = document.getElementById("sidenav2");
+            let main = document.getElementById("myMain");
+            let closeIcon = document.getElementById("closeIcon");
+            let reverseIcon = document.getElementById("reverseIcon");
+            if(close.style.display === "none"){
+                close.style.display = "block";
+            }else{
+                close.style.display = "none";
+                main.style.width = "100%";
+                main.style.zIndex ="1000";
+                open.style.display = "block";
+                closeIcon.style.display = "none";
+                reverseIcon.style.display = "block";
+            }
+        }
+    </script>
+
+<!--script to reverse the SideBar-->
+<script>
+    function myReverse(){
+        let close = document.getElementById("sidenavBar");
+        let open = document.getElementById("sidenav2");
+        let main = document.getElementById("myMain");
+        let closeIcon = document.getElementById("closeIcon");
+        if(close.style.display === "block"){
+            close.style.display = "none";
+        }else{
+            close.style.display = "block";
+            main.style.width = "80%";
+            open.style.display = "none";
+            closeIcon.style.display = "block";
+            reverseIcon.style.display = "none";
+        }
+    }
+</script>
+
+
+
+
+<div class="footer">
+    <p>
+        Copyright©<span id="date"></span>  Lagos Business School | All Right Reserved
+    </p>
+</div>
+<script>
+    let d = new Date();
+    let year = d.getFullYear();
+    document.getElementById("date").innerHTML=year;
+</script>
+
+   
+<!--Graph script-->
+
+<script>
+        var options = {
+          series: [{
+          name: 'Sales',
+          data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+        }],
+          chart: {
+          height: '100%',
+          width: '100%',
+          padding: '0px',
+          type: 'line',
+        },
+        forecastDataPoints: {
+          count: 7
+        },
+        stroke: {
+          width: 5,
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'datetime',
+          categories: ['1/10/2000', '2/11/2000', '3/11/2000', '4/11/2000', '5/11/2000', '6/11/2000', '7/11/2000', '8/11/2000', '9/11/2000', '10/11/2000', '11/11/2000', '12/11/2000', '1/11/2001', '2/11/2001', '3/11/2001','4/11/2001' ,'5/11/2001' ,'6/11/2001'],
+          tickAmount: 10,
+          labels: {
+            formatter: function(value, timestamp, opts) {
+              return opts.dateFormatter(new Date(timestamp), 'dd MMM')
+            }
+          }
+        },
+        title: {
+          text: 'Forecast',
+          align: 'left',
+          style: {
+            fontSize: "16px",
+            color: '#666'
+          }
+        },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shade: 'dark',
+            gradientToColors: [ '#FDD835'],
+            shadeIntensity: 1,
+            type: 'horizontal',
+            opacityFrom: 1,
+            opacityTo: 1,
+            stops: [0, 100, 100, 100]
+          },
+        },
+        yaxis: {
+          min: -10,
+          max: 40
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+      
+ </script>
+ 
+
+    <link rel="stylesheet" href="/asset/js/bootstrap.js">
+    <link rel="stylesheet" href="/asset/js/bootstrap.min.js">
+</body>
+</html>
